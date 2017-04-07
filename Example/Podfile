@@ -1,0 +1,14 @@
+use_frameworks!
+
+target 'HToolsLib_Example' do
+  pod 'HToolsLib', :path => '../'
+
+  target 'HToolsLib_Tests' do
+    inherit! :search_paths
+
+    pod 'Specta'
+  pod 'Expecta'
+  pod 'FBSnapshotTestCase'
+  pod 'Expecta+Snapshots'
+  end
+end
