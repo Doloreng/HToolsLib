@@ -15,16 +15,6 @@ PODS:
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
   - EGOCache (2.1.3)
-  - Expecta (1.0.5)
-  - Expecta+Snapshots (3.0.1):
-    - Expecta (~> 1.0)
-    - FBSnapshotTestCase/Core (~> 2.0)
-    - Specta (~> 1.0)
-  - FBSnapshotTestCase (2.1.4):
-    - FBSnapshotTestCase/SwiftSupport (= 2.1.4)
-  - FBSnapshotTestCase/Core (2.1.4)
-  - FBSnapshotTestCase/SwiftSupport (2.1.4):
-    - FBSnapshotTestCase/Core
   - HToolsLib (0.1.0):
     - AFNetworking (~> 3.0)
     - EGOCache
@@ -41,9 +31,6 @@ PODS:
   - SVProgressHUD (2.1.2)
 
 DEPENDENCIES:
-  - Expecta
-  - Expecta+Snapshots
-  - FBSnapshotTestCase
   - HToolsLib (from `../`)
   - Specta
 
@@ -54,9 +41,6 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   EGOCache: f0295dbe041156acabd39021354ad1045ee49e72
-  Expecta: e1c022fcd33910b6be89c291d2775b3fe27a89fe
-  Expecta+Snapshots: aee0487f8bbb9df7e0b7735380565ac06207e959
-  FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
   HToolsLib: 537a4c382baa521112d054e4c6ef9f75d93f5636
   MJExtension: 5932755f451458eefa24239358817f8d291240c7
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
@@ -64,6 +48,6 @@ SPEC CHECKSUMS:
   Specta: f506f3a8361de16bc0dcf3b17b75e269072ba465
   SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
 
-PODFILE CHECKSUM: 266a74517d46bab2067d9e30745d713f11502953
+PODFILE CHECKSUM: 9f5b29b394b3267b005b77fe0985fec0a81f8b1c
 
 COCOAPODS: 1.1.1
