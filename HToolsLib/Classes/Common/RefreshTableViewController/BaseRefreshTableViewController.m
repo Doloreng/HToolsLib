@@ -8,7 +8,7 @@
 
 #import "BaseRefreshTableViewController.h"
 
-@interface BaseRefreshTableViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface BaseRefreshTableViewController ()<UITableViewDelegate,UITableViewDataSource,BaseTableViewControllerDelegate,BaseTableViewControllerDataSource>
 @property (nonatomic, strong) NSMutableArray *listArray;
 @property (nonatomic, assign) BOOL isRefresh;
 @property (nonatomic, assign) BOOL isNextPage;
@@ -23,6 +23,25 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+}
+-(void)tableViewSetting:(UITableView*)tableView{
+    
+}
+-(NSString*)requestUrl{
+    return @"";
+}
+-(NSDictionary*)requestParam{
+    return @{};
+}
+-(NSString*)decodeDataWithKey{
+    return  @"";
+}
+-(UITableViewCell*)createCell:(id)model TableView:(UITableView*)tableView IndexPath:(NSIndexPath *)indexPath{
+    return nil;
+}
+-(BaseCellModel*)modelFromData:(NSDictionary*)dict idx:(NSInteger)idx{
+    BaseCellModel *model=[BaseCellModel new];
+    return model;
 }
 -(void)setupTableView{
     self.isRefresh=YES;
@@ -41,12 +60,12 @@
     self.mTableView.frame = frame;
     self.listArray=[[NSMutableArray alloc]init];
     
-//    __weak  typeof(self) block=self;
+    __weak const typeof(self) block=self;
     if([self conformsToProtocol:@protocol(BaseTableViewControllerDataSource)]){
-        self.baseDataSource=self;
+        self.baseDataSource=block;
     }
     if ([self conformsToProtocol:@protocol(BaseTableViewControllerDelegate)]) {
-        self.baseDelegate=self;
+        self.baseDelegate=block;
     }
     //    [self.mTableView.mj_header beginRefreshing];
     self.mTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
