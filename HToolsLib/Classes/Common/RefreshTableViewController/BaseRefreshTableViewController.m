@@ -41,12 +41,12 @@
     self.mTableView.frame = frame;
     self.listArray=[[NSMutableArray alloc]init];
     
-    __weak  typeof(self) block=self;
+//    __weak  typeof(self) block=self;
     if([self conformsToProtocol:@protocol(BaseTableViewControllerDataSource)]){
-        self.baseDataSource=block;
+        self.baseDataSource=self;
     }
     if ([self conformsToProtocol:@protocol(BaseTableViewControllerDelegate)]) {
-        self.baseDelegate=block;
+        self.baseDelegate=self;
     }
     //    [self.mTableView.mj_header beginRefreshing];
     self.mTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
