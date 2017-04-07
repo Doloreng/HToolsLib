@@ -250,6 +250,10 @@
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = WriteforBlack;
 				TargetAttributes = {
+					6003F589195388D20070C39A = {
+						DevelopmentTeam = 2ST2KQ5RN9;
+						ProvisioningStyle = Manual;
+					};
 					6003F5AD195388D20070C39A = {
 						LastSwiftMigration = 0830;
 						TestTargetID = 6003F589195388D20070C39A;
@@ -525,12 +529,15 @@
 			baseConfigurationReference = 4808C9B9C9903FE1F01F4127 /* Pods-HToolsLib_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 2ST2KQ5RN9;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HToolsLib/HToolsLib-Prefix.pch";
 				INFOPLIST_FILE = "HToolsLib/HToolsLib-Info.plist";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "4d7d6efa-68a3-4433-b2b5-a5f5e875f939";
+				PROVISIONING_PROFILE_SPECIFIER = dev_profile;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -540,12 +547,14 @@
 			baseConfigurationReference = 956569B81A4692982F543AF0 /* Pods-HToolsLib_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HToolsLib/HToolsLib-Prefix.pch";
 				INFOPLIST_FILE = "HToolsLib/HToolsLib-Info.plist";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

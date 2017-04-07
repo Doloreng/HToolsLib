@@ -188,7 +188,7 @@
  */
 -(void)requestList{
     NSString *pageSize=@"20";
-    NSString *page=[NSString stringWithFormat:@"%li",_pageNum];
+    NSString *page=[NSString stringWithFormat:@"%li",(long)_pageNum];
     NSMutableDictionary *dict=[[NSMutableDictionary alloc]initWithObjectsAndKeys:page,@"Page",pageSize,@"PageSize", nil];
     NSString *urlstr=[self.baseDataSource requestUrl];
     if (!urlstr) {
