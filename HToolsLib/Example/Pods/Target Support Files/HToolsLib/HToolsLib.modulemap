@@ -1,6 +1,0 @@
-framework module HToolsLib {
-  umbrella header "HToolsLib-umbrella.h"
-
-  export *
-  module * { export * }
-}
