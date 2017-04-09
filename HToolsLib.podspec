@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'HToolsLib'
-  s.version          = '0.1.1'
+  s.version          = '0.1.2'
   s.summary          = 'A short description of HToolsLib.'
 
 # This description is used to generate tags and improve search results.
@@ -38,6 +38,7 @@ TODO: Add long description of the pod here.
   s.dependency 'SVProgressHUD'
   s.dependency 'MJExtension'
   s.dependency 'EGOCache'
+  s.dependency 'RNCryptor', '~> 5.0'
 
   # s.resource_bundles = {
   #   'HToolsLib' => ['HToolsLib/Assets/*.png']
