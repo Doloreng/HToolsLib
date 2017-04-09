@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'HToolsLib_Example' do
+  pod 'HToolsLib', :path => '../'
+
+  target 'HToolsLib_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
