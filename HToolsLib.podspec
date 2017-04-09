@@ -31,6 +31,7 @@ TODO: Add long description of the pod here.
   s.ios.deployment_target = '8.0'
 
   s.source_files = 'HToolsLib/Classes/**/*'
+
   s.frameworks = 'Foundation', 'StoreKit','UIKit'
   s.dependency 'AFNetworking', '~> 3.1.0'
   s.dependency 'SDWebImage', '~> 4.0.0'
@@ -38,7 +39,6 @@ TODO: Add long description of the pod here.
   s.dependency 'SVProgressHUD', '~> 2.1.2'
   s.dependency 'MJExtension', '~> 3.0.13'
   s.dependency 'EGOCache', '~> 2.1.3'
-  s.dependency 'RNCryptor', '~> 5.0.1'
 
   # s.resource_bundles = {
   #   'HToolsLib' => ['HToolsLib/Assets/*.png']

@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'EAB723EA6D4115A7B78A92717F9E65BB'
+               BlueprintIdentifier = 'D0F313D107F4BA4A367639727A8B21C9'
                BlueprintName = 'HToolsLib'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'HToolsLib.framework'>
