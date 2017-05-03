@@ -7,7 +7,7 @@
 //
 
 #import "BaseViewController.h"
-#import "MJRefresh.h"
+#import <MJRefresh/MJRefresh.h>
 #import "BaseCellModel.h"
 #import "Http.h"
 
