@@ -7,7 +7,7 @@
 //
 
 #import "BaseRefreshTableViewController.h"
-
+#import <MJRefresh/MJRefresh.h>
 @interface BaseRefreshTableViewController ()<UITableViewDelegate,UITableViewDataSource,BaseTableViewControllerDataSource,BaseTableViewControllerDelegate>
 @property (nonatomic, strong) NSMutableArray *listArray;
 @property (nonatomic, assign) BOOL isRefresh;
