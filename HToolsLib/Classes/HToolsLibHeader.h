@@ -21,4 +21,5 @@ ColorWithRGBA(((_hex)>>16)&0xFF,((_hex)>>8)&0xFF,(_hex)&0xFF,255)
 #define ColorWithNumberRGBA(_hex) \
 ColorWithRGBA(((_hex)>>24)&0xFF,((_hex)>>16)&0xFF,((_hex)>>8)&0xFF,(_hex)&0xFF)
 
+
 #endif /* HToolsLibHeader_h */

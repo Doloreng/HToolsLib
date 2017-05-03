@@ -8,7 +8,7 @@
 
 #import "BaseRefreshTableViewController.h"
 
-@interface BaseRefreshTableViewController ()<UITableViewDelegate,UITableViewDataSource,BaseTableViewControllerDelegate,BaseTableViewControllerDataSource>
+@interface BaseRefreshTableViewController ()<UITableViewDelegate,UITableViewDataSource,BaseTableViewControllerDataSource,BaseTableViewControllerDelegate>
 @property (nonatomic, strong) NSMutableArray *listArray;
 @property (nonatomic, assign) BOOL isRefresh;
 @property (nonatomic, assign) BOOL isNextPage;
@@ -22,32 +22,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setupTableView];
     // Do any additional setup after loading the view.
-}
--(void)tableViewSetting:(UITableView*)tableView{
-    
-}
--(NSString*)requestUrl{
-    return @"";
-}
--(NSDictionary*)requestParam{
-    return @{};
-}
--(NSString*)decodeDataWithKey{
-    return  @"";
-}
--(UITableViewCell*)createCell:(id)model TableView:(UITableView*)tableView IndexPath:(NSIndexPath *)indexPath{
-    return nil;
-}
--(BaseCellModel*)modelFromData:(NSDictionary*)dict idx:(NSInteger)idx{
-    BaseCellModel *model=[BaseCellModel new];
-    return model;
 }
 -(void)setupTableView{
     self.isRefresh=YES;
     self.mTableView=[[UITableView alloc]initWithFrame:self.view.bounds style:UITableViewStylePlain];
     self.mTableView.delegate=self;
     self.mTableView.dataSource=self;
+    self.mTableView.backgroundColor=[UIColor redColor];
     [self.view addSubview:self.mTableView];
     CGRect frame = self.view.frame;
     
@@ -60,7 +43,7 @@
     self.mTableView.frame = frame;
     self.listArray=[[NSMutableArray alloc]init];
     
-    __weak const typeof(self) block=self;
+    __weak  typeof(self) block=self;
     if([self conformsToProtocol:@protocol(BaseTableViewControllerDataSource)]){
         self.baseDataSource=block;
     }
@@ -134,8 +117,14 @@
 }
 //结束刷新或加载新
 -(void)endHeaderOrFooter{
-    if (!self.baseDataSource||[self.baseDataSource noMJRefreh]) {
+    if (!self.baseDataSource) {
         return;
+    }
+    if ([self.baseDataSource respondsToSelector:@selector(noMJRefreh)]) {
+        if ([self.baseDataSource noMJRefreh]) {
+            return;
+        }
+        
     }
     if (self.isRefresh) {
         self.isRefresh=NO;
@@ -203,7 +192,7 @@
     }
     
     __weak typeof(self) bSelf=self;
-    Http *http=[Http init];
+    Http *http=[[Http alloc]init];
     [http get:urlstr param:dict success:^(NSDictionary *result) {
         //
         [bSelf decodeData:result];
@@ -271,6 +260,42 @@
 }
 -(NSString*)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
     return @"删除";
+}
+
+#pragma mark BaseTableViewControllerDataSource
+-(NSString *)decodeDataWithKey{
+    return @"list";
+}
+
+-(NSString *)requestUrl{
+    //@"http://cripanda.app.china.com/NewsServlet.do"
+    NSString *url=@"http://www.ximalaya.com/mobile/mall/products?device=iPhone";
+    return url;
+}
+
+-(BaseCellModel*)modelFromData:(NSDictionary *)dict idx:(NSInteger)idx{
+    BaseCellModel *model=[BaseCellModel mj_objectWithKeyValues:dict];
+    
+    return model;
+}
+-(NSDictionary*)requestParam{
+    NSDictionary *dict=@{};
+    return dict;
+}
+-(void)tableViewSetting:(UITableView *)tableView{
+    //
+    [tableView registerNib:[UINib nibWithNibName:@"DCTableViewCell" bundle:nil] forCellReuseIdentifier:@"DCTableCellIdentifier"];
+}
+
+-(UITableViewCell*)createCell:(id)model TableView:(UITableView*)tableView IndexPath:(NSIndexPath *)indexPath{
+//    BaseCellModel *item = model;
+    NSString *identifier = @"DCTableCellIdentifier";
+    //可以根据情况自定义cell
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
+    //    if(!cell){
+    //        cell = [[NSBundle mainBundle] loadNibNamed:@"CTableViewCell" owner:self options:nil][0];
+    //    }
+    return cell;
 }
 
 @end
